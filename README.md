@@ -12,7 +12,7 @@
 	- ```pip3 install requests beautifulsoup4```
 
 
-- after that the only thing  left is to install .alfredworkflow in the repo
+- after that the only thing  left is to install [sskj.alfredworkflow](https://github.com/svenko99/alfred-sskj/raw/main/sskj.alfredworkflow) in the repo
 
 
 ## Usage
