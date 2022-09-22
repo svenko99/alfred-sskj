@@ -18,3 +18,5 @@
 ## Usage
 - In Alfred type `sskj` and your word of choice e.i. `sskj krog` or `sskj pica`
 - If you enter the definition of the word will be copied to the clipboard
+
+![Screenshot 2022-09-22 at 09 32 09 2](https://user-images.githubusercontent.com/107575361/191687377-c7c328ef-e42d-4857-b931-51405d455267.jpeg)
