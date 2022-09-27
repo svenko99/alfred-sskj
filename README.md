@@ -4,7 +4,8 @@
 [![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)
 ## 🤔 What is it?
 - It's Alfred workflow for quickly	looking up **definition** of certain word in Slovenian dictionary - SSKJ *(Slovar slovenskega knjižnega jezika)*
-- It's using data from webiste [Fran.si](https://fran.si/)
+- It can also be used to find **synonyms** of certain word
+- It's using data from websites [**fran.si**](https://fran.si/) and [**sinonimi.si**](https://sinonimi.si/)
 - Workflow is written in **Python 3.10**
 
 ## Installation
@@ -14,11 +15,12 @@
 	- ```pip3 install requests beautifulsoup4```
 
 
-- after that the only thing  left is to install [sskj.alfredworkflow](https://github.com/svenko99/alfred-sskj/raw/main/sskj.alfredworkflow) in the repo
+- after that the only thing  left is to install [SSKJ.alfredworkflow](https://github.com/svenko99/alfred-sskj/raw/main/SSKJ.alfredworkflow) in the repo
 
 
 ## Usage
 - In Alfred type `sskj` and your word of choice e.i. `sskj krog` or `sskj pica`
-- If you enter the definition of the word will be copied to the clipboard
+- If you hit enter the definition of the word will be copied to the clipboard
+- To get synonyms of word type `sinonim` and your word of choice e.i. `sinonim krog` or `sinonim čas`
 
 ![Screenshot 2022-09-22 at 09 32 09 2](https://user-images.githubusercontent.com/107575361/191687377-c7c328ef-e42d-4857-b931-51405d455267.jpeg)
