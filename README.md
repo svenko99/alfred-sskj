@@ -6,7 +6,7 @@
 - It's Alfred workflow for quickly	looking up **definition** of certain word in Slovenian dictionary - SSKJ *(Slovar slovenskega knjižnega jezika)*
 - It can also be used to find **synonyms** of certain word
 - It's using data from websites [**termania.net**](https://www.termania.net/) and [**sinonimi.si**](https://sinonimi.si/)
-- Workflow is written in **Python 3.10**
+- Workflow is written in **Python 3.11**
 
 ## Installation
 - Workflow depends on two package, namely [requests](https://pypi.org/project/requests/) and [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), hance 
