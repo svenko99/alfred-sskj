@@ -5,7 +5,7 @@
 ## 🤔 What is it?
 - It's Alfred workflow for quickly	looking up **definition** of certain word in Slovenian dictionary - SSKJ *(Slovar slovenskega knjižnega jezika)*
 - It can also be used to find **synonyms** of certain word
-- It's using data from websites [**fran.si**](https://fran.si/) and [**sinonimi.si**](https://sinonimi.si/)
+- It's using data from websites [**termania.net**](https://www.termania.net/) and [**sinonimi.si**](https://sinonimi.si/)
 - Workflow is written in **Python 3.10**
 
 ## Installation
@@ -23,4 +23,4 @@
 - If you hit enter the definition of the word will be copied to the clipboard
 - To get synonyms of word type `sinonim` and your word of choice e.i. `sinonim krog` or `sinonim čas`
 
-![Screenshot 2022-09-22 at 09 32 09 2](https://user-images.githubusercontent.com/107575361/191687377-c7c328ef-e42d-4857-b931-51405d455267.jpeg)
+	<img src="https://user-images.githubusercontent.com/107575361/200019676-20371147-4eb0-4f9b-9f8b-130c1df930b7.gif" width=60% height=60%/>
