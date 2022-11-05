@@ -9,8 +9,9 @@
 - Workflow is written in **Python 3.11**
 
 ## Installation
-- Workflow depends on two package, namely [requests](https://pypi.org/project/requests/) and [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), hance 
- you need to install it before using this workflow:
+- Python (obviously)
+	- ```brew install python```
+- Workflow depends on two package, namely [requests](https://pypi.org/project/requests/) and [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), hance you need to install it before using this workflow:
 
 	- ```pip3 install requests beautifulsoup4```
 
