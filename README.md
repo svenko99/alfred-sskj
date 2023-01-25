@@ -23,4 +23,4 @@
 - If you hit enter the definition of the word will be copied to the clipboard
 - To get synonyms of word type `sinonim` and your word of choice e.i. `sinonim krog` or `sinonim čas`
 
-	<img src="https://user-images.githubusercontent.com/107575361/200019676-20371147-4eb0-4f9b-9f8b-130c1df930b7.gif" width=83% height=83%/>
+	<img src="https://user-images.githubusercontent.com/107575361/200019676-20371147-4eb0-4f9b-9f8b-130c1df930b7.gif" width=93% height=93%/>
