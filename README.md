@@ -9,13 +9,7 @@
 - Workflow is written in **Python 3.11**
 
 ## Installation
-- [Python](https://www.python.org/) (obviously)
-- Workflow depends on two package, namely [requests](https://pypi.org/project/requests/) and [beautifulsoup4](https://pypi.org/project/beautifulsoup4/), hance you need to install it before using this workflow:
-
-	- ```pip3 install requests beautifulsoup4```
-
-
-- after that the only thing  left is to install [⤓ SSKJ Workflow](https://github.com/svenko99/alfred-sskj/raw/main/SSKJ.alfredworkflow) in the repo
+- install [⤓ SSKJ Workflow](https://github.com/svenko99/alfred-sskj/raw/main/SSKJ.alfredworkflow) in the repo
 
 
 ## Usage
