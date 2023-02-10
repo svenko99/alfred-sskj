@@ -20,7 +20,7 @@ def main(word):
     # Get response from website sininomi.si and convert it to soup object
     f = f"https://sinonimi.si/search.php?word={new_word}"
     response = requests.get(f)
-    soup = BeautifulSoup(response.content, "lxml")
+    soup = BeautifulSoup(response.content, "html.parser")
 
     # Find all synonyms
     all_synonyms = soup.find_all("span")
