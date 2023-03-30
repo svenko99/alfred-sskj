@@ -8,7 +8,7 @@
 - It's using data from websites [termania.net](https://www.termania.net/) and [sinonimi.si](https://sinonimi.si/).
 
 ## Installation
-- Head to [SSKJ Workflow](https://alfred.app/workflows/svenko99/sskj/) in the Afred Gallery.
+- Head to [SSKJ Workflow](https://alfred.app/workflows/svenko99/sskj/) in the Alfred Gallery.
 
 
 ## Usage
