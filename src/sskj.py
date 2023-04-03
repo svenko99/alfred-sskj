@@ -5,19 +5,21 @@ from bs4 import BeautifulSoup
 from urllib.parse import quote_plus
 
 
-def main(inputed_word):
-    # Get the search term from the command line
-    word = quote_plus(inputed_word)
-
-    # Change URL-encoded formats of ("č", "š", "ž") chars because alfred encodes it weirdly
+def encode_word(word):
+    """Encodes the word to URL-encoded format and changes the encoding for č, š and ž."""
+    new_word = quote_plus(word)
     for old, new in [
         ["c%CC%8C", "%C4%8D"],
         ["z%CC%8C", "%C5%BE"],
         ["s%CC%8C", "%C5%A1"],
     ]:
-        word = word.replace(old, new)
+        new_word = new_word.replace(old, new)
 
-    # Get the page
+    return new_word
+
+
+def get_word_definitions(word):
+    """Returns a list of definitions for the given word."""
     link = f"https://www.termania.net/iskanje?ld=58&query={word}&SearchIn=Linked"
     response = requests.get(link)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -35,19 +37,13 @@ def main(inputed_word):
 
     except Exception:
         # if the word is not found, output the error message
-        print(
-            json.dumps(
-                {
-                    "items": [
-                        {
-                            "title": "Word not found!",
-                            "arg": "Word not found!",
-                        }
-                    ]
-                }
-            )
-        )
-        sys.exit()
+        return [
+            {
+                "title": "Word not found in Termania. - Click to search in fran.si",
+                "arg": f"https://fran.si/iskanje?View=1&Query={word}",
+                "subtitle": "",
+            }
+        ]
 
     # Replace the 1. and 2. etc. with "$$$" so we can split them later
     separated_definitions = ""
@@ -63,7 +59,7 @@ def main(inputed_word):
     ]
 
     # Iterate over the definitions and put them in the alfred json format
-    sez = [
+    result = [
         {
             "title": defnts,
             "arg": defnts,
@@ -72,10 +68,21 @@ def main(inputed_word):
         for defnts in splited_defintions
     ]
 
-    # Output result to alfred
-    final_result = json.dumps({"items": sez})
+    return result
+
+
+def output_definitions(definitions):
+    """Outputs the definitions in the Alfred json format."""
+    final_result = json.dumps({"items": definitions})
     print(final_result)
 
 
+def main():
+    """Gets the input word from the Alfred and outputs the definitions."""
+    word = encode_word("".join(sys.argv[1:]))
+    definitions = get_word_definitions(word)
+    output_definitions(definitions)
+
+
 if __name__ == "__main__":
-    main("".join(sys.argv[1:]))
+    main()
