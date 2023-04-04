@@ -2,20 +2,8 @@ import json
 import sys
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import quote_plus
 
-
-def encode_word(word):
-    """Encodes the word to URL-encoded format and changes the encoding for č, š and ž."""
-    new_word = quote_plus(word)
-    for old, new in [
-        ["c%CC%8C", "%C4%8D"],
-        ["z%CC%8C", "%C5%BE"],
-        ["s%CC%8C", "%C5%A1"],
-    ]:
-        new_word = new_word.replace(old, new)
-
-    return new_word
+from utils import encode_word, output_results
 
 
 def get_synonyms(word):
@@ -31,17 +19,11 @@ def get_synonyms(word):
         return [{"title": "Word not found!", "arg": "Word not found!"}]
 
 
-def output_synonyms(synonyms):
-    """Outputs the synonyms in the Alfred json format."""
-    final_result = json.dumps({"items": synonyms})
-    print(final_result)
-
-
 def main():
     """Gets the input word from the command line argument and outputs the synonyms."""
     word = encode_word("".join(sys.argv[1:]))
     synonyms = get_synonyms(word)
-    output_synonyms(synonyms)
+    print(output_results(synonyms))
 
 
 if __name__ == "__main__":

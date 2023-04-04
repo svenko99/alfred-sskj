@@ -2,20 +2,8 @@ import json
 import sys
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import quote_plus
 
-
-def encode_word(word):
-    """Encodes the word to URL-encoded format and changes the encoding for č, š and ž."""
-    new_word = quote_plus(word)
-    for old, new in [
-        ["c%CC%8C", "%C4%8D"],
-        ["z%CC%8C", "%C5%BE"],
-        ["s%CC%8C", "%C5%A1"],
-    ]:
-        new_word = new_word.replace(old, new)
-
-    return new_word
+from utils import encode_word, output_results
 
 
 def get_word_definitions(word):
@@ -71,17 +59,11 @@ def get_word_definitions(word):
     return result
 
 
-def output_definitions(definitions):
-    """Outputs the definitions in the Alfred json format."""
-    final_result = json.dumps({"items": definitions})
-    print(final_result)
-
-
 def main():
     """Gets the input word from the Alfred and outputs the definitions."""
     word = encode_word("".join(sys.argv[1:]))
     definitions = get_word_definitions(word)
-    output_definitions(definitions)
+    print(output_results(definitions))
 
 
 if __name__ == "__main__":
