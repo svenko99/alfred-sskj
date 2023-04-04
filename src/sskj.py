@@ -1,4 +1,3 @@
-import json
 import sys
 import requests
 from bs4 import BeautifulSoup
@@ -46,7 +45,7 @@ def get_word_definitions(word):
         i.strip() for i in separated_definitions.split("$$$") if i.strip() != ""
     ]
 
-    # Iterate over the definitions and put them in the alfred json format
+    # Iterate over the definitions
     result = [
         {
             "title": defnts,
