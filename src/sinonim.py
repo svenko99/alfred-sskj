@@ -2,7 +2,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from utils import encode_word, output_results
+from utils import encode_word, output_results, create_alfred_item, NOT_FOUND
 
 
 def get_synonyms(word):
@@ -13,14 +13,14 @@ def get_synonyms(word):
     synonyms_find = soup.find_all("span")[1:18]
     # check if the word is not found in the dictionary
     if synonyms := [synonym.text for synonym in synonyms_find]:
-        return [{"title": synonym, "arg": synonym} for synonym in synonyms]
+        return [create_alfred_item(synonym, "", synonym) for synonym in synonyms]
     else:
-        return [{"title": "Word not found!", "arg": "Word not found!"}]
+        return NOT_FOUND
 
 
 def main():
     """Gets the input word from the command line argument and outputs the synonyms."""
-    word = encode_word("".join(sys.argv[1:]))
+    word = encode_word(" ".join(sys.argv[1:]))
     synonyms = get_synonyms(word)
     print(output_results(synonyms))
 
