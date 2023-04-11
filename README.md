@@ -6,7 +6,7 @@
 - It's Alfred workflow for quickly looking up **definition** of certain word in Slovenian dictionary - SSKJ (Slovar slovenskega knjižnega jezika).
 - It can be used to find **synonyms** of certain word.
 - Real-time word **suggestion** feature when searching for words in the Slovenian language dictionary.
-- It's using data from websites [termania.net](https://www.termania.net/) and [sinonimi.si](https://sinonimi.si/).
+- It's using data from websites [fran.si](https://fran.si/) and [sinonimi.si](https://sinonimi.si/).
 
 ## Installation
 - Head to [SSKJ Workflow](https://alfred.app/workflows/svenko99/sskj/) in the Alfred Gallery.
