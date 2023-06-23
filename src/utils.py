@@ -14,6 +14,7 @@ def encode_word(word):
         ["s%CC%8C", "%C5%A1"],
     ]:
         new_word = new_word.replace(old, new)
+        
 
     return new_word
 
