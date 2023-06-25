@@ -20,8 +20,8 @@ def get_synonyms(word):
 
 def main():
     """Gets the input word from the command line argument and outputs the synonyms."""
-    word = encode_word(" ".join(sys.argv[1:]))
-    synonyms = get_synonyms(word)
+    ALFRED_QUERY = encode_word(" ".join(sys.argv[1:]))
+    synonyms = get_synonyms(ALFRED_QUERY)
     print(output_results(synonyms))
 
 

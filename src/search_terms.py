@@ -20,8 +20,8 @@ def search_terms_in_fran(word):
 
 def main():
     """Gets the input word from the command line argument and outputs the search terms."""
-    word = encode_word(" ".join(sys.argv[1:]))
-    search_terms = search_terms_in_fran(word)
+    ALFRED_QUERY = encode_word(" ".join(sys.argv[1:]))
+    search_terms = search_terms_in_fran(ALFRED_QUERY)
     print(output_results(search_terms))
 
 

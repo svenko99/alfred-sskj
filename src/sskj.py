@@ -2,7 +2,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 
-from utils import encode_word, output_results, create_alfred_item
+from utils import output_results, create_alfred_item, encode_word
 
 
 def get_word_definitions(word):
@@ -34,8 +34,8 @@ def get_word_definitions(word):
 
 def main():
     """Gets the input word from the Alfred and outputs the definitions."""
-    word = encode_word(" ".join(sys.argv[1:]))
-    definitions = get_word_definitions(word)
+    ALFRED_QUERY = encode_word(" ".join(sys.argv[1:]))
+    definitions = get_word_definitions(ALFRED_QUERY)
     print(output_results(definitions))
 
 
