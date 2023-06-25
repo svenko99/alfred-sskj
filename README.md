@@ -19,4 +19,4 @@
 - If you hit enter the definition of the word or synonym will be copied to the clipboard.
 - If you want real-time word suggestion type `iskanje` and your word of choice e.i `iskanje krog`. (If you hit enter it will output the definition of the word in Alfred.)
 
-	<img src="https://user-images.githubusercontent.com/107575361/200019676-20371147-4eb0-4f9b-9f8b-130c1df930b7.gif" width=93% height=93%/>
+  	![](https://github.com/svenko99/alfred-sskj/blob/main/images/example.gif)
