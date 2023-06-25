@@ -17,6 +17,6 @@
 - In Alfred type `sskj` and your word of choice e.i. `sskj krog` or `sskj pica`.
 - In Alfred type `sinonim` and your word of choice e.i. `sinonim krog` or `sinonim čas`.
 - If you hit enter the definition of the word or synonym will be copied to the clipboard.
-- If you want real-time word suggestion type `iskanje` and your word of choice e.i `iskanje krog`. (If you hit enter it will output the definition of the word in Alfred.)
+- If you want real-time word suggestion type `iskanje` and your word of choice e.i `iskanje krog`. If you hit enter it will output the definition of the word in Alfred.  If you press ⌘ + enter it will output synonyms of the word.
 
   	![](https://github.com/svenko99/alfred-sskj/blob/main/images/example.gif)
