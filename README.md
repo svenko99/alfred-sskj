@@ -21,4 +21,4 @@
 - In Alfred type `iskanje` for real-time word suggestion and your keyword of choice e.i `iskanje krog`. If you hit enter it will output the definition of the word in Alfred. If you press ⌘ + enter it will output synonyms of the word.
 - In Alfred type `podatki` and your word of choice e.i. `podatki krog` or `podatki pica`. It will output the word type and gender of the word.
 
-      ![](https://github.com/svenko99/alfred-sskj/blob/main/images/example.gif)
+  ![](https://github.com/svenko99/alfred-sskj/blob/main/images/example.gif)
