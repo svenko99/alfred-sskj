@@ -1,19 +1,13 @@
 import sys
-import http.client
+import requests
 
-from utils import encode_word, output_results, create_alfred_item, NOT_FOUND, quote_word
+from utils import encode_word, output_results, create_alfred_item, NOT_FOUND
 
 
 def search_terms_in_fran(word):
     """Returns a list of search terms for the given word."""
     url = f"https://fran.si/ajax/iskanje/autocomplete?query={word}&dictionaries=133"
-    conn = http.client.HTTPSConnection("fran.si")
-    conn.request(
-        "GET", f"/ajax/iskanje/autocomplete?query={quote_word(word)}&dictionaries=133"
-    )
-    res = conn.getresponse()
-    # get the data in json format
-    data = res.read().decode("utf-8")[1:-1].replace('"', "").split(",")
+    data = requests.get(url).json()
     search_terms_list = data
     if search_terms := list(search_terms_list):
         return [
