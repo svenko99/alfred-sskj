@@ -1,7 +1,5 @@
 # 📖 SSKJ workflow for Alfred
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ## 🤔 What is it?
 
 - It's an Alfred workflow for quickly looking up **definition** of certain word in Slovenian dictionary - SSKJ (Slovar slovenskega knjižnega jezika).
