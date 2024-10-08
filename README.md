@@ -2,7 +2,7 @@
 
 ## 🤔 What is it?
 
-- It's an Alfred workflow for quickly looking up **definition** of certain word in Slovenian dictionary - SSKJ (Slovar slovenskega knjižnega jezika).
+- It's an [Alfred](https://www.alfredapp.com/) workflow for quickly looking up **definition** of certain word in Slovenian dictionary - SSKJ (Slovar slovenskega knjižnega jezika).
 - It can be used to find **synonyms** of certain word.
 - Real-time word **suggestion** feature when searching for words in the Slovenian language dictionary.
 - It can also be used to find data of a specific word, such as **word type** and **gender**.
