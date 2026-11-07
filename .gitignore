@@ -1,1 +1,3 @@
 .DS_Store
+prefs.plist
+__pycache__/

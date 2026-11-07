@@ -1,24 +1,51 @@
-# 📖 SSKJ workflow for Alfred
+# <img src='images/icon.png' width='45' align='absmiddle' alt='icon'>&nbsp;SSKJ Alfred Workflow
 
-## 🤔 What is it?
+Look up definitions, synonyms, and word data in the Slovenian dictionary (SSKJ) – all from [Alfred](https://www.alfredapp.com/).
 
-- It's an [Alfred](https://www.alfredapp.com/) workflow for quickly looking up **definition** of certain word in Slovenian dictionary - SSKJ (Slovar slovenskega knjižnega jezika).
-- It can be used to find **synonyms** of certain word.
-- Real-time word **suggestion** feature when searching for words in the Slovenian language dictionary.
-- It can also be used to find data of a specific word, such as **word type** and **gender**.
-- It's using data from websites [fran.si](https://fran.si/), [sinonimi.si](https://sinonimi.si/) and [viri.cjvt.si/sloleks/](https://viri.cjvt.si/sloleks/slv/).
+[**⤓ Download latest release**](https://github.com/svenko99/alfred-sskj/releases/latest/download/SSKJ.alfredworkflow) or get it from the [Alfred Gallery](https://alfred.app/workflows/svenko99/sskj/).
 
-## Installation
-
-- Head to [SSKJ Workflow](https://alfred.app/workflows/svenko99/sskj/) in the Alfred Gallery.
-- You can also download it [⤓ here](https://github.com/svenko99/alfred-sskj/releases/latest/download/SSKJ.alfredworkflow).
+![Looking up a word](images/example.gif)
 
 ## Usage
 
-- In Alfred type `sskj` and your word of choice e.i. `sskj krog` or `sskj pica`.
-- In Alfred type `sinonim` and your word of choice e.i. `sinonim krog` or `sinonim čas`.
-- If you hit enter the definition of the word or synonym will be copied to the clipboard.
-- In Alfred type `iskanje` for real-time word suggestion and your keyword of choice e.i `iskanje krog`. If you hit enter it will output the definition of the word in Alfred. If you press ⌘ + enter it will output synonyms of the word.
-- In Alfred type `podatki` and your word of choice e.i. `podatki krog` or `podatki pica`. It will output the word type and gender of the word.
+### Definitions
 
-  ![](https://github.com/svenko99/alfred-sskj/blob/main/images/example.gif)
+Look up the definitions of a word via the `sskj` keyword, e.g. `sskj krog`.
+
+* <kbd>↩&#xFE0E;</kbd> Copy the definition.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Open the word on [fran.si](https://fran.si/).
+
+### Synonyms
+
+Look up the synonyms of a word via the `sinonim` keyword, e.g. `sinonim čas`.
+
+* <kbd>↩&#xFE0E;</kbd> Copy the synonym.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Open the word in the synonym dictionary on [fran.si](https://fran.si/).
+
+### Word data
+
+Look up the word type and gender via the `podatki` keyword, e.g. `podatki krog`. Every matching entry is listed, so `krog` shows both the noun and the preposition.
+
+* <kbd>↩&#xFE0E;</kbd> Copy the word data.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Open the entry on [Sloleks](https://viri.cjvt.si/sloleks/slv/).
+
+### Word suggestions
+
+Get real-time word suggestions as you type via the `iskanje` keyword, e.g. `iskanje kro`. Press <kbd>⇥</kbd> to autocomplete a suggestion.
+
+* <kbd>↩&#xFE0E;</kbd> Show definitions.
+* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Show synonyms.
+* <kbd>⌃</kbd><kbd>↩&#xFE0E;</kbd> Show word data.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Open the word on [fran.si](https://fran.si/).
+
+In definitions, synonyms, and word data, <kbd>⇧</kbd> opens a Quick Look preview and <kbd>⌘</kbd><kbd>L</kbd> shows the full text in Large Type – handy for long definitions.
+
+## Requirements
+
+[uv](https://docs.astral.sh/uv/getting-started/installation/) must be installed. On first run it sets up Python and the dependencies automatically. The workflow looks for `uv` in `~/.local/bin`, `/opt/homebrew/bin`, and `/usr/local/bin`.
+
+Data comes from [fran.si](https://fran.si/) (SSKJ² and Sinonimni slovar) and [Sloleks](https://viri.cjvt.si/sloleks/slv/).
+
+## License
+
+[MIT](./LICENSE)

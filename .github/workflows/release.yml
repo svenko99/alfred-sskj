@@ -1,0 +1,21 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: svenko99/alfred-build-action@v1
+        id: build
+        with:
+          output-path: SSKJ.alfredworkflow
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.build.outputs.workflow-file }}
+          name: ${{ steps.build.outputs.workflow-name }} ${{ github.ref_name }}
+          generate_release_notes: true
