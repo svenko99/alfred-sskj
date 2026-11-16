@@ -42,7 +42,7 @@ In definitions, synonyms, and word data, <kbd>⇧</kbd> opens a Quick Look previ
 
 ## Requirements
 
-[uv](https://docs.astral.sh/uv/getting-started/installation/) must be installed. On first run it sets up Python and the dependencies automatically. The workflow looks for `uv` in `~/.local/bin`, `/opt/homebrew/bin`, and `/usr/local/bin`.
+Python 3, which comes with Apple's Command Line Tools (macOS offers to install them the first time `python3` is run). All other dependencies are bundled with the workflow.
 
 Data comes from [fran.si](https://fran.si/) (SSKJ² and Sinonimni slovar) and [Sloleks](https://viri.cjvt.si/sloleks/slv/).
 

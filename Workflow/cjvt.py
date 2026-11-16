@@ -1,15 +1,9 @@
-# /// script
-# requires-python = ">=3.14"
-# dependencies = [
-#     "beautifulsoup4",
-#     "requests",
-# ]
-# ///
-
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import quote
 
-import requests
 from bs4 import BeautifulSoup
+
+import web
 
 
 class CJVT:
@@ -22,15 +16,11 @@ class CJVT:
 
     def search(self, word: str) -> list[dict]:
         """Returns a list of Sloleks entries that exactly match word. If there are no matches, it returns an empty list."""
-        response = requests.get(self.SEARCH_URL.format(word=word))
-
-        return response.json()
+        return web.get_json(self.SEARCH_URL.format(word=quote(word)))
 
     def description(self, id: int) -> str:
         """Returns the description of a headword (e.g. "samostalnik, občno ime, moški spol"). If it is missing, it returns an empty string."""
-        response = requests.get(self.headword_url(id))
-
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(web.get(self.headword_url(id)), "html.parser")
 
         description = soup.find("span", {"id": "headwordDescription"})
         return description.text.strip() if description else ""

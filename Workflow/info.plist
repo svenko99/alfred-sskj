@@ -156,7 +156,7 @@
 				<key>runningsubtext</key>
 				<string>Nalaganje…</string>
 				<key>script</key>
-				<string>PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH" uv run --quiet --script alfred.py sskj "$1"</string>
+				<string>/usr/bin/python3 alfred.py sskj "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -224,7 +224,7 @@
 				<key>runningsubtext</key>
 				<string>Nalaganje…</string>
 				<key>script</key>
-				<string>PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH" uv run --quiet --script alfred.py iskanje "$1"</string>
+				<string>/usr/bin/python3 alfred.py iskanje "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -273,7 +273,7 @@
 				<key>runningsubtext</key>
 				<string>Nalaganje…</string>
 				<key>script</key>
-				<string>PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH" uv run --quiet --script alfred.py sinonim "$1"</string>
+				<string>/usr/bin/python3 alfred.py sinonim "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -389,7 +389,7 @@
 				<key>runningsubtext</key>
 				<string>Nalaganje…</string>
 				<key>script</key>
-				<string>PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:$PATH" uv run --quiet --script alfred.py podatki "$1"</string>
+				<string>/usr/bin/python3 alfred.py podatki "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -413,8 +413,6 @@
 	</array>
 	<key>readme</key>
 	<string>Alfred workflow for quickly looking up the definition of a word in the Slovenian dictionary (SSKJ), its synonyms, and basic word data (word type, gender) from Sloleks.
-
-Requires uv (https://docs.astral.sh/uv/), which installs Python and the dependencies on first run.
 
 USAGE:
 - sskj &lt;word&gt; – definitions (↩ copy, ⌥↩ open in browser)
@@ -486,7 +484,7 @@ Data: fran.si (SSKJ², Sinonimni slovar) and viri.cjvt.si/sloleks.</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2026.1</string>
+	<string>2026.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/svenko99/alfred-sskj</string>
 </dict>

@@ -1,11 +1,3 @@
-# /// script
-# requires-python = ">=3.14"
-# dependencies = [
-#     "beautifulsoup4",
-#     "requests",
-# ]
-# ///
-
 """Alfred script filter for SSKJ, synonyms and Sloleks word data.
 
 Usage: alfred.py {sskj|sinonim|podatki|iskanje} <query>
@@ -16,17 +8,21 @@ utility in the workflow routes to Copy to Clipboard or Open URL. Items from
 the selected word is looked up with the chosen modifier.
 """
 
+from __future__ import annotations
+
 import json
 import sys
 import unicodedata
 from collections.abc import Callable
+from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
 
-import requests
+# Dependencies are bundled in lib/ so the workflow runs on the system Python
+sys.path.insert(0, str(Path(__file__).parent / "lib"))
 
-from cjvt import CJVT
-from sskj import SSKJ
+from cjvt import CJVT  # noqa: E402
+from sskj import SSKJ  # noqa: E402
 
 Item = dict[str, Any]
 
@@ -139,7 +135,7 @@ def main() -> None:
     else:
         try:
             items = COMMANDS[command](query)
-        except requests.RequestException as error:
+        except (OSError, ValueError) as error:  # network errors, invalid JSON
             items = [
                 {
                     "title": "Napaka pri povezavi",

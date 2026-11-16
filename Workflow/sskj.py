@@ -1,13 +1,6 @@
-# /// script
-# requires-python = ">=3.14"
-# dependencies = [
-#     "beautifulsoup4",
-#     "requests",
-# ]
-# ///
-
-import requests
 from bs4 import BeautifulSoup
+
+import web
 
 
 class SSKJ:
@@ -18,25 +11,23 @@ class SSKJ:
 
     def search(self, query: str) -> list[str]:
         """Returns a list of words that match query. If there are no matches, it returns an empty list."""
-        response = requests.get(
+        return web.get_json(
             self.SEARCH_URL,
-            params={"query": query, "dictionaries": self.DEFINITION_DICTIONARY_ID},
+            {"query": query, "dictionaries": self.DEFINITION_DICTIONARY_ID},
         )
-
-        return response.json()
 
     def definition(self, word: str) -> list[str]:
         """Returns a list of different word definitions. If the word is not found, it returns an empty list."""
-        response = requests.get(
+        html = web.get(
             self.DEFINITION_URL,
-            params={
+            {
                 "Query": word,
                 "FilteredDictionaryIds": self.DEFINITION_DICTIONARY_ID,
                 "View": 1,
             },
         )
 
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(html, "html.parser")
 
         # The last [:-1] character of the text is ":" and hence removed
         return [
@@ -45,16 +36,16 @@ class SSKJ:
 
     def synonym(self, word: str) -> list[str]:
         """Returns a list of synonyms for a given word. If the word is not found or has no synonyms, it returns an empty list."""
-        response = requests.get(
+        html = web.get(
             self.DEFINITION_URL,
-            params={
+            {
                 "Query": word,
                 "FilteredDictionaryIds": self.SYNONYM_DICTIONARY_ID,
                 "View": 1,
             },
         )
 
-        soup = BeautifulSoup(response.text, "html.parser")
+        soup = BeautifulSoup(html, "html.parser")
 
         words = []
         for label in soup.find_all("span", string="SINONIMI:"):
